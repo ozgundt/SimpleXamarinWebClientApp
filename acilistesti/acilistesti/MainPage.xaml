@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:acilistesti"
+             x:Class="acilistesti.MainPage">
+	<ScrollView HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand" Padding="0,0,0,10">
+		<ListView BackgroundColor="Transparent" ItemsSource="{Binding LastNews1}" Margin="0" HeightRequest="581" RowHeight="83" SeparatorVisibility="None" HasUnevenRows="true">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<ViewCell>
+						<ContentView Padding="0,5,0,0">
+							<Grid RowSpacing="0" BackgroundColor="White">
+								<Grid.RowDefinitions>
+									<RowDefinition Height="58"></RowDefinition>
+									<RowDefinition Height="20"></RowDefinition>
+								</Grid.RowDefinitions>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="140"/>
+									<ColumnDefinition Width="*"/>
+								</Grid.ColumnDefinitions>
+								<Image Grid.RowSpan="2" Grid.Row="0" Grid.Column="0" Aspect="AspectFill" Source="{Binding ImageURL}" WidthRequest="140" HeightRequest="78" Margin="0"/>
+								<Label Grid.Column="1" VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center" Text="{Binding Title}" Margin="10,0,10,0" />
+								<Label Grid.Column="1" Grid.Row="1" FontSize="11" TextColor="Silver" HorizontalOptions="EndAndExpand" HorizontalTextAlignment="End" Text="{Binding DateTime}" Margin="0,0,10,0" />
+							</Grid>
+						</ContentView>
+					</ViewCell>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+	</ScrollView>
+</ContentPage>
